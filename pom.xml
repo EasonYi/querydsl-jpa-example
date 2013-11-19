@@ -4,7 +4,7 @@
 
   <groupId>com.querydsl</groupId>
   <artifactId>querydsl-jpa-example</artifactId>
-  <packaging>war</packaging>
+  <packaging>jar</packaging>
   <version>0.0.1</version>
   <name>Querydsl JPA example</name>
   <description></description>
