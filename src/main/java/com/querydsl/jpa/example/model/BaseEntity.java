@@ -5,6 +5,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 
+import com.querydsl.jpa.example.Identifiable;
+
 @MappedSuperclass
 public abstract class BaseEntity implements Identifiable {
 

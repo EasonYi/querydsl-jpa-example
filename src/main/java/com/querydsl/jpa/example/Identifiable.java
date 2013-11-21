@@ -1,4 +1,4 @@
-package com.querydsl.jpa.example.model;
+package com.querydsl.jpa.example;
 
 public interface Identifiable {
     Long getId();

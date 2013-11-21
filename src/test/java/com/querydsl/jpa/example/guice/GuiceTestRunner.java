@@ -8,9 +8,10 @@ import com.google.inject.Injector;
 
 public class GuiceTestRunner extends BlockJUnit4ClassRunner {
 
-    private static final Injector injector = Guice.createInjector(new ServiceModule());
+    private static final Injector injector = Guice
+            .createInjector(new ServiceModule());
 
-    public GuiceTestRunner(Class<?> klass) throws InitializationError  {
+    public GuiceTestRunner(Class<?> klass) throws InitializationError {
         super(klass);
     }
 
@@ -18,5 +19,4 @@ public class GuiceTestRunner extends BlockJUnit4ClassRunner {
     protected Object createTest() throws Exception {
         return injector.getInstance(getTestClass().getJavaClass());
     }
-
 }
