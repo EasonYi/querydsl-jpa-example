@@ -35,7 +35,7 @@ public abstract class AbstractPersistenceTest {
                     throws SQLException {
                 List<String> tables = new ArrayList<String>();
                 DatabaseMetaData md = connection.getMetaData();
-                ResultSet rs = md.getTables(null, null, null, null);
+                ResultSet rs = md.getTables(null, null, null, new String[] {"TABLE"});
                 try {
                     while (rs.next()) {
                         tables.add(rs.getString("TABLE_NAME"));
@@ -44,14 +44,14 @@ public abstract class AbstractPersistenceTest {
                     rs.close();
                 }
 
-                java.sql.Statement stmt = connection
-                        .createStatement();
+                java.sql.Statement stmt = connection.createStatement();
+                System.err.println(tables);
                 try {
-                    stmt.execute("set foreign_key_checks=0");
+                    stmt.execute("SET REFERENTIAL_INTEGRITY FALSE");
                     for (String table : tables) {
-                        stmt.execute("truncate " + table);
+                        stmt.execute("TRUNCATE TABLE " + table);
                     }
-                    stmt.execute("set foreign_key_checks=1");
+                    stmt.execute("SET REFERENTIAL_INTEGRITY TRUE");
                 } finally {
                     stmt.close();
                 }

@@ -6,7 +6,7 @@ import com.google.inject.persist.jpa.JpaPersistModule;
 public class ServiceModule extends AbstractModule {
     @Override
     protected void configure() {
-        install(new JpaPersistModule("querydsl").properties(System.getProperties()));
+        install(new JpaPersistModule("h2").properties(System.getProperties()));
         bind(JpaInitializer.class).asEagerSingleton();
     }
 }
