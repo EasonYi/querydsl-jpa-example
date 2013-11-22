@@ -1,11 +1,10 @@
-package com.querydsl.jpa.example.model;
+package com.querydsl.example.jpa.model;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 
-import com.querydsl.jpa.example.Identifiable;
 
 @MappedSuperclass
 public abstract class BaseEntity implements Identifiable {

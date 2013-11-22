@@ -1,4 +1,4 @@
-package com.querydsl.jpa.example.repository;
+package com.querydsl.example.jpa.repository;
 
 import java.io.Serializable;
 
@@ -9,6 +9,6 @@ public interface Repository<Entity, Id extends Serializable> {
      * @param id
      * @return
      */
-    Entity byId(Id id);
+    Entity findById(Id id);
 
 }

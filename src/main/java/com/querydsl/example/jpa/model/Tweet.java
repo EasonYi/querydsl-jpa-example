@@ -1,12 +1,12 @@
-package com.querydsl.jpa.example.model;
+package com.querydsl.example.jpa.model;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -17,7 +17,7 @@ public class Tweet extends BaseEntity {
     @ManyToOne(optional = false)
     private User poster;
 
-    @OneToMany(fetch = FetchType.EAGER)
+    @ManyToMany(fetch = FetchType.EAGER)
     private List<User> mentions = new ArrayList<User>();
 
     @ManyToOne

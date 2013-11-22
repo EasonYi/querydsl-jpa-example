@@ -1,4 +1,4 @@
-package com.querydsl.jpa.example.model;
+package com.querydsl.example.jpa.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;

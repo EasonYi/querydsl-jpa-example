@@ -1,4 +1,4 @@
-package com.querydsl.jpa.example.guice;
+package com.querydsl.example.jpa.guice;
 
 import com.google.inject.AbstractModule;
 import com.google.inject.persist.jpa.JpaPersistModule;

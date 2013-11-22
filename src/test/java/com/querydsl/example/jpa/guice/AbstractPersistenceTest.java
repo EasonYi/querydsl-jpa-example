@@ -1,4 +1,4 @@
-package com.querydsl.jpa.example.guice;
+package com.querydsl.example.jpa.guice;
 
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;

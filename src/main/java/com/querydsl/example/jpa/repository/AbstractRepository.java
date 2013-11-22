@@ -1,4 +1,4 @@
-package com.querydsl.jpa.example.repository;
+package com.querydsl.example.jpa.repository;
 
 import javax.inject.Inject;
 import javax.inject.Provider;
@@ -8,7 +8,7 @@ import com.mysema.query.jpa.HQLTemplates;
 import com.mysema.query.jpa.impl.JPADeleteClause;
 import com.mysema.query.jpa.impl.JPAQuery;
 import com.mysema.query.types.EntityPath;
-import com.querydsl.jpa.example.Identifiable;
+import com.querydsl.example.jpa.model.Identifiable;
 
 public abstract class AbstractRepository<T extends Identifiable> implements Repository<T, Long> {
 

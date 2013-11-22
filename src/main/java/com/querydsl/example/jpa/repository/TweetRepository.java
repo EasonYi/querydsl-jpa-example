@@ -1,12 +1,12 @@
-package com.querydsl.jpa.example.repository;
+package com.querydsl.example.jpa.repository;
 
-import static com.querydsl.jpa.example.model.QTweet.tweet;
+import static com.querydsl.example.jpa.model.QTweet.tweet;
 
 import java.util.List;
 
 import com.google.inject.persist.Transactional;
 import com.mysema.query.types.expr.BooleanExpression;
-import com.querydsl.jpa.example.model.Tweet;
+import com.querydsl.example.jpa.model.Tweet;
 
 @Transactional
 public class TweetRepository extends AbstractRepository<Tweet> {
@@ -15,11 +15,11 @@ public class TweetRepository extends AbstractRepository<Tweet> {
     }
 
     @Override
-    public Tweet byId(Long id) {
+    public Tweet findById(Long id) {
         return find(Tweet.class, id);
     }
 
-    public List<Tweet> byPredicate(BooleanExpression expr) {
+    public List<Tweet> findAll(BooleanExpression expr) {
         return from(tweet).where(expr).list(tweet);
     }
 }

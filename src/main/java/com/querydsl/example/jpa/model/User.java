@@ -1,4 +1,4 @@
-package com.querydsl.jpa.example.model;
+package com.querydsl.example.jpa.model;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,12 +9,8 @@ import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import org.hibernate.annotations.Cache;
-import org.hibernate.annotations.CacheConcurrencyStrategy;
-
 @Entity
 @Table(name = "user")
-@Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
 public class User extends BaseEntity {
     @Column(unique = true)
     private String username;

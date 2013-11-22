@@ -1,16 +1,16 @@
-package com.querydsl.jpa.example.repository;
+package com.querydsl.example.jpa.repository;
 
-import static com.querydsl.jpa.example.model.QUser.user;
+import static com.querydsl.example.jpa.model.QUser.user;
 
 import java.util.List;
 
 import com.google.inject.persist.Transactional;
-import com.querydsl.jpa.example.model.User;
+import com.querydsl.example.jpa.model.User;
 
 @Transactional
 public class UserRepository extends AbstractRepository<User> {
     @Override
-    public User byId(Long id) {
+    public User findById(Long id) {
         return find(User.class, id);
     }
 
