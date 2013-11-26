@@ -1,4 +1,4 @@
-package com.querydsl.example.jpa.guice;
+package com.querydsl.example.jpa.repository;
 
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
@@ -13,19 +13,20 @@ import javax.persistence.EntityManager;
 
 import org.hibernate.Session;
 import org.hibernate.jdbc.Work;
-import org.junit.After;
+import org.junit.Before;
 import org.junit.runner.RunWith;
 
 import com.google.inject.persist.Transactional;
+import com.querydsl.example.jpa.guice.GuiceTestRunner;
 
 @RunWith(GuiceTestRunner.class)
 public abstract class AbstractPersistenceTest {
     @Inject
     private Provider<EntityManager> em;
 
-    @After
+    @Before
     @Transactional
-    public void after() {
+    public void before() {
         EntityManager entityManager = em.get();
         entityManager.getEntityManagerFactory().getCache().evictAll();
         Session session = entityManager.unwrap(Session.class);
@@ -45,7 +46,6 @@ public abstract class AbstractPersistenceTest {
                 }
 
                 java.sql.Statement stmt = connection.createStatement();
-                System.err.println(tables);
                 try {
                     stmt.execute("SET REFERENTIAL_INTEGRITY FALSE");
                     for (String table : tables) {

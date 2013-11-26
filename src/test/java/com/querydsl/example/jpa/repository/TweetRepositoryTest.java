@@ -14,7 +14,6 @@ import org.junit.Test;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Range;
-import com.querydsl.example.jpa.guice.AbstractPersistenceTest;
 import com.querydsl.example.jpa.model.Tweet;
 import com.querydsl.example.jpa.model.User;
 

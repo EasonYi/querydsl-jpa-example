@@ -7,7 +7,6 @@ import javax.inject.Inject;
 
 import org.junit.Test;
 
-import com.querydsl.example.jpa.guice.AbstractPersistenceTest;
 import com.querydsl.example.jpa.model.User;
 import com.querydsl.example.jpa.repository.UserRepository;
 
