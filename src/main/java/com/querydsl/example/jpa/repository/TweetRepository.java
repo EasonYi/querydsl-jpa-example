@@ -10,6 +10,7 @@ import com.querydsl.example.jpa.model.Tweet;
 
 @Transactional
 public class TweetRepository extends AbstractRepository<Tweet> {
+
     public Tweet save(Tweet tweet) {
         return persistOrMerge(tweet);
     }
