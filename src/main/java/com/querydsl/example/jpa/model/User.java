@@ -1,7 +1,7 @@
 package com.querydsl.example.jpa.model;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -15,8 +15,8 @@ public class User extends BaseEntity {
     @Column(unique = true)
     private String username;
 
-    @OneToMany(fetch = FetchType.LAZY)
-    private List<Tweet> tweets = new ArrayList<Tweet>();
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "poster")
+    private Set<Tweet> tweets = new HashSet<Tweet>();
 
     public User() {
     }
@@ -38,11 +38,11 @@ public class User extends BaseEntity {
         this.username = username;
     }
 
-    public void setTweets(List<Tweet> tweets) {
+    public void setTweets(Set<Tweet> tweets) {
         this.tweets = tweets;
     }
 
-    public List<Tweet> getTweets() {
+    public Set<Tweet> getTweets() {
         return tweets;
     }
 }
